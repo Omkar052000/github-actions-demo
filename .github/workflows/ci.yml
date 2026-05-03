@@ -24,4 +24,4 @@ jobs:
               with:
                 context: ./backend
                 push: true
-                tags: ${{ secrets.DOCKERHUBUSERNAME }}/skillpulse_backend:1.0
+                tags: ${{ secrets.DOCKERHUBUSERNAME }}/skillpulse-backend:1.0
