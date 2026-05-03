@@ -19,17 +19,9 @@ jobs:
                 username: ${{ secrets.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-            - name: Check username length
-              run: |
-                if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
-                  echo "EMPTY"
-                else
-                  echo "SET"
-                fi
-
-            # - name: Push to DockerHub
-            #   uses: docker/build-push-action@v7
-            #   with:
-            #     context: ./backend
-            #     push: true
-            #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/skillpulse-backend:1.0
+            - name: Push to DockerHub
+              uses: docker/build-push-action@v7
+              with:
+                context: ./backend
+                push: true
+                tags: ${{ secrets.DOCKERHUB_USERNAME }}/skillpulse_backend:1.0
