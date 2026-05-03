@@ -18,8 +18,9 @@ jobs:
               with:
                 host: ${{ secrets.HOST }}
                 username: ${{ secrets.USERNAME }}
-                password: ${{ secrets.PASSWORD }}
+                key: ${{ secrets.PASSWORD }}
                 script: |
+                  git clone https://github.com/Omkar052000/github-actions-demo.git
                   cd ~/github-actions-demo
                   docker compose pull
                   docker compose up -d
