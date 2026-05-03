@@ -19,8 +19,13 @@ jobs:
                 username: ${{ secrets.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-            - name: Debug username
-              run: echo "Username is ${{ secrets.DOCKERHUB_USERNAME }}"
+            - name: Check username length
+              run: |
+                if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
+                  echo "EMPTY"
+                else
+                  echo "SET"
+                fi
 
             # - name: Push to DockerHub
             #   uses: docker/build-push-action@v7
